@@ -24,7 +24,7 @@ class MyServer{
             System.out.println("client says: \n"+clMsg);                 //printing client message
             if(clMsg.equals("/stop")) {                      // checking for /stop
                 dout.writeUTF(gbStr);
-                break;                                              //if /stop the break
+                break;                                              //if /stop then break
             }
             else if(clMsg.equals("/help")) {                             //if /help send helpMsg
                 answer = helpStr;

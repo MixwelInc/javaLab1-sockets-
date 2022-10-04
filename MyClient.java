@@ -9,9 +9,7 @@ public static void main(String args[])throws Exception {
     DataOutputStream dout=new DataOutputStream(s.getOutputStream());  
     BufferedReader br=new BufferedReader(new InputStreamReader(System.in));  
     
-    String str="",str2="";  
-    //dout.writeUTF(str);  
-    //dout.flush(); 
+    String str="",str2="";
     while(true) { 
         str2=din.readUTF();  
         System.out.println("Server says: "+str2);  
