@@ -13,7 +13,7 @@ class MyServer{
         boolean boilerState = false;
 
         String clMsg="",answer="",welcomeStr = "Hello!\nThe boiler is turned off.\nType /help to see the commands.\n",
-        helpStr = "To turn off the boiler type -off\nTo turn on the boiler type -on\nTo stop server type /stop\n",
+        helpStr = "To turn off the boiler type -off\nTo turn on the boiler type -on\nTo stop server type /stop\nTo find out the state of boiler type /state\n",
         gbStr = "The server is turned off\n";
 
         dout.writeUTF(welcomeStr);
@@ -43,6 +43,15 @@ class MyServer{
                 answer = "The boiler is now turned off\n";
                 boilerState = false;
             }
+            else if(clMsg.equals("/state")) {
+                if(boilerState) {
+                    answer = "The boiler is turned on";
+                }
+                else {
+                    answer = "The boiler is turned off";
+                }
+            }
+            
             //clMsg=din.readUTF().toString(); 
             dout.writeUTF(answer);
             dout.flush();                                           //writing buffered answer
